@@ -1,0 +1,19 @@
+{
+  "name": "auction21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markle12/auction21.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markle12/auction21/issues"
+  },
+  "homepage": "https://github.com/markle12/auction21#readme"
+}
