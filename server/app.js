@@ -19,11 +19,12 @@ const app = express();
 app.use(express.json());
 
 app.post('/api/:action', (request, response) => {
-    console.log(request.params.accessToken);
-    console.log(request.body);
+    
+    console.log(request.params);
+    console.log(request.body.accessToken);
 
-    if (request.params.accessToken) {
-        verify(request.params.accessToken).catch(console.log);
+    if (request.body.accessToken) {
+        verify(request.body.accessToken).catch(console.log);
     }
     response.send(JSON.stringify({response: 'ok'}));
 });
