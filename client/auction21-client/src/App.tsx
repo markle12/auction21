@@ -5,6 +5,8 @@ import './App.css';
 let googleClientId = "151004553284-r57cgf5ipjipqjnvcn2ijt6aep9kbh3b.apps.googleusercontent.com"
 export default class App extends React.Component {
   onResponse = (response: any) => {
+    let id_token = response.getAuthResponse().id_token;
+    console.log(id_token);
     var req = new XMLHttpRequest();
     req.addEventListener("load", (event) => {
       console.log(req.responseText);
@@ -12,7 +14,7 @@ export default class App extends React.Component {
 
     req.open('POST', 'https://auction.troop712.org/api/login');
     req.setRequestHeader('Content-Type', 'application/json');
-    req.send(JSON.stringify({accessToken: response.accessToken}));
+    req.send(JSON.stringify({accessToken: id_token}));
   }
 
   render() {
