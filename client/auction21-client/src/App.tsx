@@ -10,8 +10,8 @@ export default class App extends React.Component {
       console.log(req.responseText);
     });
 
-    req.setRequestHeader('Content-Type', 'application/json');
     req.open('POST', 'auction.troop712.org:80/api/login');
+    req.setRequestHeader('Content-Type', 'application/json');
     req.send(JSON.stringify({accessToken: response.accessToken}));
   }
 
