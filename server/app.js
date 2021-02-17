@@ -22,7 +22,7 @@ app.post('/api/:action', (request, response) => {
     console.log(request.params);
     console.log(request.body);
     if (request.params.accessToken) {
-        verify(request.params.accessToken);
+        verify(request.params.accessToken).catch(console.log);
     }
     response.send(JSON.stringify({response: 'ok'}));
 });
