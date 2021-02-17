@@ -9,6 +9,7 @@ async function verify(token) {
         audience: googleClientId
     });
     const payload = ticket.getPayload();
+    console.log('payload!');
     console.log(payload);
 }
 
@@ -19,6 +20,10 @@ app.use(express.json());
 
 app.post('/api/:action', (request, response) => {
     console.log(request.params);
+    console.log(request.body);
+    if (request.params.accessToken) {
+        verify(request.params.accessToken);
+    }
     response.send(JSON.stringify({response: 'ok'}));
 });
 
